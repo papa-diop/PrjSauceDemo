@@ -1,7 +1,7 @@
 Feature: Login et Logout sur Sauce Demo
-    En tant quutilisateur,
-    Je veux pouvoir me connecter et me deconnecter du site Sauce Demo,
-    Afin de securiser mon acces aux informations.
+    En tant qu'utilisateur,
+    Je veux pouvoir me connecter et me deconnecter de Sauce Demo,
+    Afin de.
 
     Scenario: Login et Logout sur Sauce Demo
         Given je suis sur la page de login de Sauce Demo
