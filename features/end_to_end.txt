@@ -14,3 +14,13 @@ Feature: E-commerce sur Sauce Demo
         When je saisis les informations du client
         When je finalise la commande
         Then je verifie que la commande sest bien realisee
+
+
+class CartPage (BasePage):
+    URL = 'https://www.saucedemo.com/cart.html'   
+    CART_ITEMS = (By.XPATH, '//span[@class="shopping_cart_badge" and text()="2"]')        
+    def verify_two_products_in_cart(self):            
+        items = WebDriverWait(self.browser, 10).until(                
+            ec.presence_of_all_elements_located(self.CART_ITEMS)            
+        )            
+        assert len(items) == 2, f"Expected 2 items in the cart, but found {len(items)}"

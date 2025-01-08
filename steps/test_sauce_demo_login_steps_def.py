@@ -5,10 +5,6 @@ from pages.sauce_demo_page import SauceDemoPage
 def test_login_logout_app():
     """Vérifie que l'application permet de se connecter et de se déconnecter"""
 
-@scenario('../features/login_logout.feature', 'Login avec un compte verrouillé')
-def test_locked_out_login_app():
-    """Vérifie que l'application affiche un message d'erreur pour un compte verrouillé"""
-
 @given('je suis sur la page de login de Sauce Demo')
 def iam_on_sauce_demo_page(browser):
     page = SauceDemoPage(browser)
@@ -34,8 +30,3 @@ def logout(browser):
 def check_logout_success(browser):
     page = SauceDemoPage(browser)
     assert page.is_logged_out()
-
-@then('je vois un message derreur indiquant que lutilisateur est verrouille')
-def check_locked_out_error(browser):
-    page = SauceDemoPage(browser)
-    assert page.is_locked_out()

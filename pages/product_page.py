@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
-import time
+#import time
 
 class ProductPage(BasePage):
     URL = 'https://www.saucedemo.com/inventory.html'
@@ -25,7 +25,7 @@ class ProductPage(BasePage):
         ) 
         print(f"Nombre de boutons 'Add to cart' trouvés : {len(buttons)}")
         buttons[0].click()
-        time.sleep(5)
+        #time.sleep(10)
         buttons[1].click()
         
     def go_to_cart(self):

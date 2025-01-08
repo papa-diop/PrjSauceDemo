@@ -1,17 +1,17 @@
 from pytest_bdd import scenario, given, when, then, parsers
-"""
 from pages.cart_page import CartPage
+"""
 from pages.checkout_overview_page import CheckoutOverviewPage
 from pages.checkout_page import CheckoutPage
 from pages.confirmation_page import ConfirmationPage
 """
-
+import time
 from pages.product_page import ProductPage
 from pages.sauce_demo_page import SauceDemoPage
 
 
 @scenario('../features/end_to_end.feature', 'Acheter des produits sur Sauce Demo')
-def test_login_logout_app():
+def test_end_to_end_app():
     """Effectuer un parcours complet"""
 
 
@@ -35,6 +35,16 @@ def sort_products_by_price_desc(browser):
 def add_first_two_products_to_cart(browser):
     page = ProductPage(browser)
     page.add_first_two_products_to_cart()
+
+@when(parsers.parse('je vais au panier'))
+def go_to_cart(browser):
+    page = ProductPage(browser) 
+    page.go_to_cart()
+
+@then(parsers.parse('je verifie quil y a deux produits dans le panier'))
+def check_cart_products(browser): 
+    page = CartPage(browser) 
+    assert page.cart_contains_two_products()
 
 """
 @when('je vais au panier')

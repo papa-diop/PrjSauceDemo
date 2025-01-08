@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By  
-
-class SauceDemoPage:
+from pages.base_page import BasePage
+class SauceDemoPage(BasePage):
     URL = 'https://www.saucedemo.com/'
     USERNAME_INPUT = (By.ID, 'user-name')
     PASSWORD_INPUT = (By.ID, 'password')
@@ -9,10 +9,6 @@ class SauceDemoPage:
     LOGOUT_BUTTON = (By.ID, 'logout_sidebar_link')
     PRODUCT_TITLE = (By.CLASS_NAME, 'title')
     ERROR_MESSAGE = (By.CSS_SELECTOR, '.error-message-container')
-
-
-    def __init__(self, browser):
-        self.browser = browser
 
     def load(self):
         self.browser.get(self.URL)
@@ -23,9 +19,6 @@ class SauceDemoPage:
         self.browser.find_element(*self.LOGIN_BUTTON).click()
 
     def is_logged_in(self):
-        """WebDriverWait(self.browser, 10).until(
-            ec.url_to_be("LOGGED_PAGE_URL")
-        )"""
         return self.browser.find_element(*self.PRODUCT_TITLE).is_displayed()
 
     def logout(self):

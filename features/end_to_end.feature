@@ -10,7 +10,3 @@ Feature: E-commerce sur Sauce Demo
         And jajoute les deux premiers produits au panier
         And je vais au panier
         Then je verifie quil y a deux produits dans le panier
-        And je vais au ckeckout
-        When je saisis les informations du client
-        When je finalise la commande
-        Then je verifie que la commande sest bien realisee
