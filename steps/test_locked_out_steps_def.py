@@ -3,7 +3,7 @@ from pages.sauce_demo_page import SauceDemoPage
 
 @scenario('../features/login_logout.feature', 'Login avec un compte verrouille')
 def test_locked_out_login_app():
-    """Vérifie que l'application affiche un message d'erreur pour un compte verrouillé"""
+    """Se connecter avec le compte locked out"""
 
 @given('je suis sur la page de login de Sauce Demo')
 def iam_on_sauce_demo_page(browser):

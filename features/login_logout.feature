@@ -13,4 +13,4 @@ Feature: Login et Logout sur Sauce Demo
     Scenario: Login avec un compte verrouille
         Given je suis sur la page de login de Sauce Demo
         When je me connecte avec "locked_out_user" et "secret_sauce"
-        Then je vois un message derreur indiquant que lutilisateur est verrouille
+        Then je vois un message derreur indiquant que lutilisateur est verrouille 

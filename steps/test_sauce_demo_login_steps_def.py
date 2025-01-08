@@ -5,7 +5,7 @@ from pages.sauce_demo_page import SauceDemoPage
 def test_login_logout_app():
     """Vérifie que l'application permet de se connecter et de se déconnecter"""
 
-@scenario('../features/login_logout.feature', 'Login avec un compte verrouillé')
+@scenario('../features/login_logout.feature', 'Login et Logout sur Sauce Demo')
 def test_locked_out_login_app():
     """Vérifie que l'application affiche un message d'erreur pour un compte verrouillé"""
 
